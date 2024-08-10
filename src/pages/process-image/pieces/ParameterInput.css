@@ -1,0 +1,22 @@
+.parameter-input {
+	margin-top: 20px;
+	background-color: var(--panel-color);
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	padding: 20px;
+	font-size: larger;
+	flex-wrap: wrap;
+}
+
+.parameter-input-block {
+	flex-grow: 1;
+}
+
+.parameter-input input {
+	margin-left: 20px;
+	border-radius: 5px;
+	border-color: none;
+	border-style: none;
+	font-size: large;
+}
