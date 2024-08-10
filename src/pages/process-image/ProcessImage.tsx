@@ -18,8 +18,9 @@ function ProcessImage() {
 		if (imageFile) {
 			const formData = new FormData();
 			formData.append("image", imageFile);
-			formData.append("canny_threshold_1", "75");
-			formData.append("canny_threshold_2", "150");
+			formData.append("canny_threshold_1", String(cannyThreshold1));
+			formData.append("canny_threshold_2", String(cannyThreshold2));
+			formData.append("confidence_threshold", String(confidenceThreshold));
 
 			axios
 				.post("http://3.145.56.177/post-image/", formData, {
