@@ -1,5 +1,7 @@
 :root {
-	--panel-color: #c5705d;
+	--panel-color: #b5c0d0;
+	--button-color: #b5c0d0;
+	--button-hover-color: #7e8591;
 	--text-color: #0c0c0c;
 }
 
@@ -19,6 +21,7 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-color: #f5e8dd;
 }
 
 code {

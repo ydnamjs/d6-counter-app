@@ -1,0 +1,48 @@
+.image-selector-buttons {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.image-selector h2 {
+	text-align: center;
+}
+
+.image-selector p {
+	display: block;
+}
+
+.image-selector button {
+	flex-grow: 1;
+	width: 250px;
+
+	border: none;
+	border-radius: 10px;
+	background-color: var(--button-color);
+	cursor: pointer;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.image-selector button:hover {
+	background-color: var(--button-hover-color);
+}
+
+.image-selector button:hover p {
+	text-decoration: underline;
+}
+
+.image-selector button img {
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.image-selector button p {
+	display: inline;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}

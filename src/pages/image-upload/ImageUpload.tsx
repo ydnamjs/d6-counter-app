@@ -1,5 +1,6 @@
 import React from "react";
 import "./ImageUpload.css";
+import ImageSelector from "./pieces/ImageSelector";
 
 function ImageUpload() {
 	return (
@@ -9,6 +10,7 @@ function ImageUpload() {
 				Here you can upload images with six sided dice in them to have an AI model
 				automagically count them for you!
 			</p>
+			<ImageSelector />
 		</div>
 	);
 }
