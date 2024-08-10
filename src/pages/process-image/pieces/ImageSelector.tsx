@@ -1,8 +1,11 @@
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import "./ImageSelector.css";
 
 import uploadIcon from "../assets/Upload_Icon.png";
 import imagesIcon from "../assets/Images_Icon.png";
+import closeIcon from "../assets/Close_Icon.png";
+
+import SampleImageMenu from "./SampleImageMenu";
 
 function ImageSelector({
 	imageFile,
@@ -14,9 +17,11 @@ function ImageSelector({
 	// We use a hidden input component that we click when the button is clicked so that
 	// we can have a nice stylized button for uploading the file
 	const fileInputRef = useRef<HTMLInputElement | null>(null);
-	const handleButtonClick = () => {
+	const handleUploadButtonClicked = () => {
 		fileInputRef.current?.click();
 	};
+
+	const [sampleMenuVisible, setSampleMenuVisible] = useState(false);
 
 	const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const file = event.target.files?.[0];
@@ -29,12 +34,16 @@ function ImageSelector({
 		<div className="image-selector">
 			<h2>Choose an Image</h2>
 			<div className="image-selector-buttons">
-				<button onClick={handleButtonClick}>
+				<button onClick={handleUploadButtonClicked}>
 					<img src={uploadIcon}></img>
 					<p>Upload Your Own</p>
 				</button>
-				<button>
-					<img src={imagesIcon}></img>
+				<button
+					onClick={() => {
+						setSampleMenuVisible(!sampleMenuVisible);
+					}}
+				>
+					<img src={sampleMenuVisible ? closeIcon : imagesIcon}></img>
 					<p>Select From Samples</p>
 				</button>
 			</div>
@@ -45,6 +54,7 @@ function ImageSelector({
 				type="file"
 				onChange={handleFileChange}
 			/>
+			{sampleMenuVisible && <SampleImageMenu setSampleMenuVisible={setSampleMenuVisible} />}
 		</div>
 	);
 }

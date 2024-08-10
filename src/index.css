@@ -1,4 +1,5 @@
 :root {
+	--background-color: #f5e8dd;
 	--panel-color: #b5c0d0;
 	--button-color: #b5c0d0;
 	--button-hover-color: #7e8591;
@@ -21,7 +22,7 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: #f5e8dd;
+	background-color: var(--background-color);
 }
 
 code {

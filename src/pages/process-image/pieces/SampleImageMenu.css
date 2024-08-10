@@ -1,0 +1,43 @@
+@keyframes slidedown {
+	from {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+}
+
+.sample-image-menu {
+	margin-top: 20px;
+	padding: 20px;
+
+	animation: slidedown 0.5s forwards;
+	background-color: var(--panel-color);
+	border-radius: 10px;
+}
+
+.sample-image-menu h2 {
+	margin-top: 0;
+}
+
+.sample-images {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+
+.sample-images img {
+	width: 200px;
+	flex-grow: 1;
+}
+
+.sample-images img:hover {
+	border-width: 10px;
+	margin: -10px;
+
+	border-style: solid;
+	border-radius: 10px;
+	border-color: var(--background-color);
+}
