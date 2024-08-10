@@ -25,6 +25,7 @@ function ProcessImage() {
 				confidenceThreshold={confidenceThreshold}
 				setConfidenceThreshold={setConfidenceThreshold}
 			/>
+			<button className="submit-button">Count My Dice!</button>
 		</div>
 	);
 }
