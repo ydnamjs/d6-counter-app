@@ -25,12 +25,24 @@
 .sample-images {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	gap: 20px;
 }
 
 .sample-images img {
 	width: 200px;
 	flex-grow: 1;
+}
+
+@media (max-width: 750px) {
+	.sample-images {
+		flex-direction: column;
+	}
+	.sample-images img {
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+	}
 }
 
 .sample-images img:hover {
