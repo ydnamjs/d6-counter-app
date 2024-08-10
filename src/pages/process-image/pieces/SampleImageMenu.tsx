@@ -2,8 +2,8 @@ import React from "react";
 import "./SampleImageMenu.css";
 
 import sampleImageOne from "../assets/Sample_Image_1.jpg";
-import sampleImageTwo from "../assets/Sample_Image_1.jpg";
-import sampleImageThree from "../assets/Sample_Image_1.jpg";
+import sampleImageTwo from "../assets/Sample_Image_2.jpg";
+import sampleImageThree from "../assets/Sample_Image_3.jpg";
 
 function SampleImageMenu({
 	setImageFile,
