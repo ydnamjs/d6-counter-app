@@ -19,3 +19,7 @@
 	text-align: center;
 	/* background-color: red; */
 }
+
+.file-upload-input {
+	display: none;
+}
