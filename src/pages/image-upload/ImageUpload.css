@@ -1,0 +1,22 @@
+.image-upload {
+	height: 600px;
+	width: 960px;
+	max-height: 100vh;
+	max-width: 95vw;
+	margin-right: auto;
+	margin-left: auto;
+	/* background-color: blue; */
+}
+
+.image-upload h1 {
+	text-align: center;
+}
+
+.image-upload p {
+	width: 960px;
+	max-width: 95vw;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	/* background-color: red; */
+}
