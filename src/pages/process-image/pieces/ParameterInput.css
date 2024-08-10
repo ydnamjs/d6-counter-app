@@ -1,0 +1,26 @@
+.parameter-input {
+	margin-top: 20px;
+	padding: 20px;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 20px;
+
+	font-size: larger;
+
+	border-radius: 10px;
+	background-color: var(--panel-color);
+}
+
+.parameter-input-block {
+	flex-grow: 1;
+}
+
+.parameter-input input {
+	margin-left: 20px;
+	border-radius: 5px;
+	border-color: none;
+	border-style: none;
+	font-size: large;
+}

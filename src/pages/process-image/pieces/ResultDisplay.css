@@ -1,0 +1,25 @@
+.result-display {
+	margin-bottom: 20px;
+	padding: 20px;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 20px;
+
+	background-color: var(--panel-color);
+	border-radius: 10px;
+}
+
+.result-item {
+	flex-grow: 1;
+	text-align: center;
+}
+
+.result-item h2 {
+	margin-top: 0;
+}
+
+.result-item img {
+	width: 280px;
+}

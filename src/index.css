@@ -1,3 +1,11 @@
+:root {
+	--background-color: #f5e8dd;
+	--panel-color: #b5c0d0;
+	--button-color: #b5c0d0;
+	--button-hover-color: #7e8591;
+	--text-color: #0c0c0c;
+}
+
 body {
 	margin: 0;
 	font-family:
@@ -14,6 +22,7 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-color: var(--background-color);
 }
 
 code {
