@@ -54,7 +54,12 @@ function ImageSelector({
 				type="file"
 				onChange={handleFileChange}
 			/>
-			{sampleMenuVisible && <SampleImageMenu setSampleMenuVisible={setSampleMenuVisible} />}
+			{sampleMenuVisible && (
+				<SampleImageMenu
+					setImageFile={setImageFile}
+					setSampleMenuVisible={setSampleMenuVisible}
+				/>
+			)}
 		</div>
 	);
 }

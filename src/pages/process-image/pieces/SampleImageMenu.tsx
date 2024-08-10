@@ -6,10 +6,19 @@ import sampleImageTwo from "../assets/Sample_Image_1.jpg";
 import sampleImageThree from "../assets/Sample_Image_1.jpg";
 
 function SampleImageMenu({
+	setImageFile,
 	setSampleMenuVisible,
 }: {
+	setImageFile: (imageFile: File | null) => void;
 	setSampleMenuVisible: (sampleMenuVisible: boolean) => void;
 }) {
+	async function selectImage(image: string, imageName: string) {
+		const response = await fetch(image);
+		const blob = await response.blob();
+		const file = new File([blob], imageName, {type: blob.type});
+		setImageFile(file);
+	}
+
 	return (
 		<div className="sample-image-menu">
 			<h2>Sample Images</h2>
@@ -18,6 +27,7 @@ function SampleImageMenu({
 					<img
 						src={sampleImageOne}
 						onClick={() => {
+							selectImage(sampleImageOne, "Sample_Image_1.jpg");
 							setSampleMenuVisible(false);
 						}}
 					/>
@@ -26,6 +36,7 @@ function SampleImageMenu({
 					<img
 						src={sampleImageTwo}
 						onClick={() => {
+							selectImage(sampleImageTwo, "Sample_Image_2.jpg");
 							setSampleMenuVisible(false);
 						}}
 					/>
@@ -34,6 +45,7 @@ function SampleImageMenu({
 					<img
 						src={sampleImageThree}
 						onClick={() => {
+							selectImage(sampleImageThree, "Sample_Image_3.jpg");
 							setSampleMenuVisible(false);
 						}}
 					/>
