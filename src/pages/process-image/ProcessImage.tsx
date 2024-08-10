@@ -1,8 +1,8 @@
 import React from "react";
-import "./ImageUpload.css";
+import "./ProcessImage.css";
 import ImageSelector from "./pieces/ImageSelector";
 
-function ImageUpload() {
+function ProcessImage() {
 	return (
 		<div className="image-upload">
 			<h1>Welcome To The D6 Counter Site!</h1>
@@ -15,4 +15,4 @@ function ImageUpload() {
 	);
 }
 
-export default ImageUpload;
+export default ProcessImage;

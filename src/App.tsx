@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import ImageUpload from "./pages/image-upload/ImageUpload";
+import ProcessImage from "./pages/process-image/ProcessImage";
 
 function App() {
 	return (
 		<div className="app">
 			<div></div>
-			<ImageUpload />
+			<ProcessImage />
 		</div>
 	);
 }
