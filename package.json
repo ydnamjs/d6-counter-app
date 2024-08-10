@@ -1,8 +1,8 @@
 {
-	"name": "d6-counter-app",
+	"name": "d6-counter-frontend",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "http://ydnamjs.github.io/d6-counter-app",
+	"homepage": "http://ydnamjs.github.io/d6-counter-frontend",
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.17.0",
 		"@testing-library/react": "^13.4.0",
