@@ -1,12 +1,16 @@
 .parameter-input {
 	margin-top: 20px;
-	background-color: var(--panel-color);
+	padding: 20px;
+
 	display: flex;
 	flex-direction: row;
-	gap: 20px;
-	padding: 20px;
-	font-size: larger;
 	flex-wrap: wrap;
+	gap: 20px;
+
+	font-size: larger;
+
+	border-radius: 10px;
+	background-color: var(--panel-color);
 }
 
 .parameter-input-block {
