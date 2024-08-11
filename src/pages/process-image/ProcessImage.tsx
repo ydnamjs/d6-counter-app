@@ -23,11 +23,15 @@ function ProcessImage() {
 			formData.append("confidence_threshold", String(confidenceThreshold));
 
 			axios
-				.post("http://3.145.56.177/post-image/", formData, {
-					headers: {
-						"Content-Type": "multipart/form-data",
+				.post(
+					"https://jfamjfdof653ra4jialfj4z4se0jgcdf.lambda-url.us-east-2.on.aws/post-image",
+					formData,
+					{
+						headers: {
+							"Content-Type": "multipart/form-data",
+						},
 					},
-				})
+				)
 				.then((response: {data: {preprocessed_image: string; output_image: string}}) => {
 					setPreprocessedImg64(response.data.preprocessed_image);
 					setPredictionImg64(response.data.output_image);
