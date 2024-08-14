@@ -24,7 +24,7 @@ function ProcessImage() {
 
 			axios
 				.post(
-					"https://jfamjfdof653ra4jialfj4z4se0jgcdf.lambda-url.us-east-2.on.aws/post-image",
+					"https://uolwmke1dc.execute-api.us-east-2.amazonaws.com/post-image",
 					formData,
 					{
 						headers: {
