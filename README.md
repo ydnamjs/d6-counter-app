@@ -1,6 +1,6 @@
 # D6 Counter App
 
-React App for detecting and classifying 6 sided dice in images and video
+React.js App for detecting and classifying 6 sided dice in images
 
 ## Technologies Used
 
