@@ -59,7 +59,7 @@ function ImageSelector({
 					}}
 				>
 					<img src={sampleMenuVisible ? closeIcon : imagesIcon}></img>
-					<p>Select From Samples</p>
+					<p>{sampleMenuVisible ? "Close Sample Menu" : "Select From Samples"}</p>
 				</button>
 			</div>
 			{fileName && <p>Using Image: {fileName}</p>}
