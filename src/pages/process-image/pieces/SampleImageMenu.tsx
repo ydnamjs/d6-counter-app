@@ -8,11 +8,17 @@ import {convertFileToBase64} from "./utils";
 
 function SampleImageMenu({
 	setImage64,
+	setPreprocessedImg64,
+	setPredictionImg64,
+	setRequestStatus,
 	setFileName,
 	setSampleMenuVisible,
 }: {
 	setImage64: (imageFile: string) => void;
 	setFileName: (fileName: string) => void;
+	setPreprocessedImg64: (preprocessedImg64: string) => void;
+	setPredictionImg64: (predictionImg64: string) => void;
+	setRequestStatus: (requestStatus: string) => void;
 	setSampleMenuVisible: (sampleMenuVisible: boolean) => void;
 }) {
 	async function selectImage(image: string, imageName: string) {
@@ -23,6 +29,10 @@ function SampleImageMenu({
 		const image64 = await convertFileToBase64(file);
 		setImage64(image64);
 		setFileName(file.name);
+
+		setRequestStatus("Waiting For Submit");
+		setPreprocessedImg64("");
+		setPredictionImg64("");
 	}
 
 	return (

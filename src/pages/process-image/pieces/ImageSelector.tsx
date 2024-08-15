@@ -7,7 +7,17 @@ import closeIcon from "../assets/Close_Icon.png";
 import SampleImageMenu from "./SampleImageMenu";
 import {cropResizeConvertImage} from "./utils";
 
-function ImageSelector({setImage64}: {setImage64: (image64: string) => void}) {
+function ImageSelector({
+	setImage64,
+	setPreprocessedImg64,
+	setPredictionImg64,
+	setRequestStatus,
+}: {
+	setImage64: (image64: string) => void;
+	setPreprocessedImg64: (preprocessedImg64: string) => void;
+	setPredictionImg64: (predictionImg64: string) => void;
+	setRequestStatus: (requestStatus: string) => void;
+}) {
 	// We use a hidden input component that we click when the button is clicked so that
 	// we can have a nice stylized button for uploading the file
 	const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -24,6 +34,9 @@ function ImageSelector({setImage64}: {setImage64: (image64: string) => void}) {
 		if (file) {
 			setImage64(await cropResizeConvertImage(file));
 			setFileName(file.name);
+			setRequestStatus("Waiting For Submit");
+			setPreprocessedImg64("");
+			setPredictionImg64("");
 
 			// We reset the event.target.value because handleImageUpload wont get called if we upload the same file twice in a row.
 			// This matters because if the user were to upload a file, use a sample image, and then upload the first file again,
@@ -46,7 +59,7 @@ function ImageSelector({setImage64}: {setImage64: (image64: string) => void}) {
 					}}
 				>
 					<img src={sampleMenuVisible ? closeIcon : imagesIcon}></img>
-					<p>Select From Samples</p>
+					<p>{sampleMenuVisible ? "Close Sample Menu" : "Select From Samples"}</p>
 				</button>
 			</div>
 			{fileName && <p>Using Image: {fileName}</p>}
@@ -59,6 +72,9 @@ function ImageSelector({setImage64}: {setImage64: (image64: string) => void}) {
 			{sampleMenuVisible && (
 				<SampleImageMenu
 					setImage64={setImage64}
+					setPreprocessedImg64={setPreprocessedImg64}
+					setPredictionImg64={setPredictionImg64}
+					setRequestStatus={setRequestStatus}
 					setFileName={setFileName}
 					setSampleMenuVisible={setSampleMenuVisible}
 				/>
