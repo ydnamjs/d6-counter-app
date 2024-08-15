@@ -62,7 +62,6 @@ function ProcessImage() {
 			<ParameterInput
 				cannyThreshold1={cannyThreshold1}
 				setCannyThreshold1={setCannyThreshold1}
-				cannyThreshold2={cannyThreshold2}
 				setCannyThreshold2={setCannyThreshold2}
 				confidenceThreshold={confidenceThreshold}
 				setConfidenceThreshold={setConfidenceThreshold}
