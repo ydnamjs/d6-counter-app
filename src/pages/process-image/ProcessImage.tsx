@@ -39,6 +39,9 @@ function ProcessImage() {
 				.then((response: {data: {preprocessed_image: string; output_image: string}}) => {
 					setPreprocessedImg64(response.data.preprocessed_image);
 					setPredictionImg64(response.data.output_image);
+				})
+				.catch((error) => {
+					setRequestStatus(error.message);
 				});
 		}
 	}
