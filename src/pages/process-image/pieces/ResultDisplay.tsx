@@ -1,44 +1,32 @@
-import React, {useState} from "react";
+import React from "react";
 import "./ResultDisplay.css";
 
+const IMG_SRC_PREFIX = "data:image/png;base64,";
+
 function ResultDisplay({
-	imageFile,
+	image64,
 	preprocessedImg64,
 	predictionImg64,
 }: {
-	imageFile: File | null;
+	image64: string;
 	preprocessedImg64: string;
 	predictionImg64: string;
 }) {
-	const [imageSrc, setImageSrc] = useState<string | ArrayBuffer | null>(null);
-
-	if (imageFile) {
-		const reader = new FileReader();
-		reader.onloadend = () => {
-			setImageSrc(reader.result);
-		};
-		reader.readAsDataURL(imageFile);
-	}
-
 	return (
 		<div className="result-display">
 			<div className="result-item">
 				<h2>Original Image</h2>
-				{preprocessedImg64 !== "" && <img src={imageSrc as string}></img>}
-				{preprocessedImg64 === "" && <div>Waiting For Result</div>}
+				{image64 !== "" && <img src={IMG_SRC_PREFIX + image64}></img>}
+				{image64 === "" && <div>Waiting For Result</div>}
 			</div>
 			<div className="result-item">
 				<h2>Preprocessed Image</h2>
-				{preprocessedImg64 !== "" && (
-					<img src={"data:image/png;base64," + preprocessedImg64}></img>
-				)}
+				{preprocessedImg64 !== "" && <img src={IMG_SRC_PREFIX + preprocessedImg64}></img>}
 				{preprocessedImg64 === "" && <div>Waiting For Result</div>}
 			</div>
 			<div className="result-item">
 				<h2>Prediction Image</h2>
-				{predictionImg64 !== "" && (
-					<img src={"data:image/png;base64," + predictionImg64}></img>
-				)}
+				{predictionImg64 !== "" && <img src={IMG_SRC_PREFIX + predictionImg64}></img>}
 				{predictionImg64 === "" && <div>Waiting For Result</div>}
 			</div>
 		</div>
