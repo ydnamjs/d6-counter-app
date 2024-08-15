@@ -6,7 +6,7 @@ import axios from "axios";
 import ResultDisplay from "./pieces/ResultDisplay";
 
 function ProcessImage() {
-	const [imageFile, setImageFile] = useState<File | null>(null);
+	const [image64, setImage64] = useState<string>("");
 	const [cannyThreshold1, setCannyThreshold1] = useState<number>(60);
 	const [cannyThreshold2, setCannyThreshold2] = useState<number>(120);
 	const [confidenceThreshold, setConfidenceThreshold] = useState<number>(0.75);
@@ -15,9 +15,9 @@ function ProcessImage() {
 	const [predictionImg64, setPredictionImg64] = useState<string>("");
 
 	function handleSubmit() {
-		if (imageFile) {
+		if (image64) {
 			const formData = new FormData();
-			formData.append("image", imageFile);
+			formData.append("image64", image64);
 			formData.append("canny_threshold_1", String(cannyThreshold1));
 			formData.append("canny_threshold_2", String(cannyThreshold2));
 			formData.append("confidence_threshold", String(confidenceThreshold));
@@ -46,7 +46,7 @@ function ProcessImage() {
 				Here you can upload images with six sided dice in them to have an AI model
 				automagically count them for you!
 			</p>
-			<ImageSelector imageFile={imageFile} setImageFile={setImageFile} />
+			<ImageSelector setImage64={setImage64} />
 			<ParameterInput
 				cannyThreshold1={cannyThreshold1}
 				setCannyThreshold1={setCannyThreshold1}
@@ -59,7 +59,7 @@ function ProcessImage() {
 				Count My Dice!
 			</button>
 			<ResultDisplay
-				imageFile={imageFile}
+				image64={image64}
 				preprocessedImg64={preprocessedImg64}
 				predictionImg64={predictionImg64}
 			/>

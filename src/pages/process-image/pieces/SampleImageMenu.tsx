@@ -4,19 +4,25 @@ import "./SampleImageMenu.css";
 import sampleImageOne from "../assets/Sample_Image_1.jpg";
 import sampleImageTwo from "../assets/Sample_Image_2.jpg";
 import sampleImageThree from "../assets/Sample_Image_3.jpg";
+import {convertFileToBase64} from "./utils";
 
 function SampleImageMenu({
-	setImageFile,
+	setImage64,
+	setFileName,
 	setSampleMenuVisible,
 }: {
-	setImageFile: (imageFile: File | null) => void;
+	setImage64: (imageFile: string) => void;
+	setFileName: (fileName: string) => void;
 	setSampleMenuVisible: (sampleMenuVisible: boolean) => void;
 }) {
 	async function selectImage(image: string, imageName: string) {
 		const response = await fetch(image);
 		const blob = await response.blob();
 		const file = new File([blob], imageName, {type: blob.type});
-		setImageFile(file);
+
+		const image64 = await convertFileToBase64(file);
+		setImage64(image64);
+		setFileName(file.name);
 	}
 
 	return (
