@@ -11,11 +11,15 @@ function ProcessImage() {
 	const [cannyThreshold2, setCannyThreshold2] = useState<number>(120);
 	const [confidenceThreshold, setConfidenceThreshold] = useState<number>(0.75);
 
+	const [requestStatus, setRequestStatus] = useState("Waiting For Image");
+
 	const [preprocessedImg64, setPreprocessedImg64] = useState<string>("");
 	const [predictionImg64, setPredictionImg64] = useState<string>("");
 
 	function handleSubmit() {
 		if (image64) {
+			setRequestStatus("Waiting For Response");
+
 			const formData = new FormData();
 			formData.append("image64", image64);
 			formData.append("canny_threshold_1", String(cannyThreshold1));
@@ -46,7 +50,12 @@ function ProcessImage() {
 				Here you can upload images with six sided dice in them to have an AI model
 				automagically count them for you!
 			</p>
-			<ImageSelector setImage64={setImage64} />
+			<ImageSelector
+				setImage64={setImage64}
+				setPreprocessedImg64={setPreprocessedImg64}
+				setPredictionImg64={setPredictionImg64}
+				setRequestStatus={setRequestStatus}
+			/>
 			<ParameterInput
 				cannyThreshold1={cannyThreshold1}
 				setCannyThreshold1={setCannyThreshold1}
@@ -62,6 +71,7 @@ function ProcessImage() {
 				image64={image64}
 				preprocessedImg64={preprocessedImg64}
 				predictionImg64={predictionImg64}
+				requestStatus={requestStatus}
 			/>
 		</div>
 	);
