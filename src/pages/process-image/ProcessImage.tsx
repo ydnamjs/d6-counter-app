@@ -55,7 +55,12 @@ function ProcessImage() {
 			</p>
 			<p>
 				For best results, use a flat, single-color background with the camera positioned no
-				more than 6 inches above the surface.
+				more than 6 inches above the surface. <br />
+				Dice with a single color are likely to work better than dice with a lot of texture.
+			</p>
+			<p>
+				All images will are resized to 512x512 before processing. Non-square images are
+				cropped to obtain their center most region.
 			</p>
 			<ImageSelector
 				setImage64={setImage64}
