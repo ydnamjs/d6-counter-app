@@ -53,6 +53,10 @@ function ProcessImage() {
 				Here you can upload images with six sided dice in them to have an AI model
 				automagically count them for you!
 			</p>
+			<p>
+				For best results, use a flat, single-color background with the camera positioned no
+				more than 6 inches above the surface.
+			</p>
 			<ImageSelector
 				setImage64={setImage64}
 				setPreprocessedImg64={setPreprocessedImg64}
