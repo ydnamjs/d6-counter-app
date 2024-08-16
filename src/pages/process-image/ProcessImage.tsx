@@ -7,9 +7,9 @@ import ResultDisplay from "./pieces/ResultDisplay";
 
 function ProcessImage() {
 	const [image64, setImage64] = useState<string>("");
-	const [cannyThreshold1, setCannyThreshold1] = useState<number>(60);
-	const [cannyThreshold2, setCannyThreshold2] = useState<number>(120);
-	const [confidenceThreshold, setConfidenceThreshold] = useState<number>(0.75);
+	const [cannyThreshold1, setCannyThreshold1] = useState<number>(90);
+	const [cannyThreshold2, setCannyThreshold2] = useState<number>(180);
+	const [confidenceThreshold, setConfidenceThreshold] = useState<number>(0.9);
 
 	const [requestStatus, setRequestStatus] = useState("Waiting For Image");
 
@@ -52,6 +52,15 @@ function ProcessImage() {
 			<p>
 				Here you can upload images with six sided dice in them to have an AI model
 				automagically count them for you!
+			</p>
+			<p>
+				For best results, use a flat, single-color background with the camera positioned no
+				more than 6 inches above the surface. <br />
+				Dice with a single color are likely to work better than dice with a lot of texture.
+			</p>
+			<p>
+				All images will are resized to 512x512 before processing. Non-square images are
+				cropped to obtain their center most region.
 			</p>
 			<ImageSelector
 				setImage64={setImage64}
