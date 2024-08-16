@@ -7,9 +7,9 @@ import ResultDisplay from "./pieces/ResultDisplay";
 
 function ProcessImage() {
 	const [image64, setImage64] = useState<string>("");
-	const [cannyThreshold1, setCannyThreshold1] = useState<number>(60);
-	const [cannyThreshold2, setCannyThreshold2] = useState<number>(120);
-	const [confidenceThreshold, setConfidenceThreshold] = useState<number>(0.75);
+	const [cannyThreshold1, setCannyThreshold1] = useState<number>(90);
+	const [cannyThreshold2, setCannyThreshold2] = useState<number>(180);
+	const [confidenceThreshold, setConfidenceThreshold] = useState<number>(0.9);
 
 	const [requestStatus, setRequestStatus] = useState("Waiting For Image");
 
